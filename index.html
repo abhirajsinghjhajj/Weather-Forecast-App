@@ -9,22 +9,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card"><!-- Within this card we have to create a search box -->
-        <div class="search"><!-- Ismein daalenge ek input box and search button-->
-            <!-- creates a text input field for a web form
-            type="text" attribute defines it as a single-line text input field.
-
-            placeholder attribute provides a hint or example to the user of what to input. 
-            In this case, "Enter city name: " appears inside the text box as a prompt until the user starts typing. 
-            
-            spellcheck attribute determines whether the browser’s spellcheck feature is enabled for this input field.
-            Setting it to "false" disables spellchecking, which can be useful for fields where you don't want spellchecking,
-            such as city names, which might not always be recognized by standard dictionaries.-->
+    <div class="card">
+        
+        <div class="search">
             <input type="text" placeholder="Enter city name: " spellcheck="false">
-
-            <!-- Add button in which we have to add icon -->
              <button><img src="search.png"></button>
-
         </div>
 
         <div class="error">
@@ -33,27 +22,28 @@
 
         <div class="weather">
             <img src="rain.png" class="weather-icon">
-            <!-- We have to display temperature so we will put it in h1 tag -->
              <h1 class="temp">22°C </h1>
              <h2 class="city">New York </h2>
 
              <div class="details">
+                 
                 <div class="col">
                     <img src="humidity.png">
                     <div>
-                        <!-- We will write text in div -->
                         <p class="humidity">50%</p>
                         <p>Humidity</p>
                     </div>
+                    
                 </div>
 
                 <div class="col">
                     <img src="wind.png">
-                    <!-- We will write text in div -->
                      <p class="wind">15 km/h</p>
                      <p>Wind Speed</p>
                 </div>
+                 
              </div>
+            
         </div>
 
     </div>
@@ -61,7 +51,6 @@
     <script>
 
         apiKey="d61cad99cc478b58a08b553ea0af9c43";
-        // To get temperature in degree celsius use units=metric
         apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
         const searchBox=document.querySelector(".search input");
@@ -76,29 +65,29 @@
                     document.querySelector(".weather").style.display="none";
                 }
                 else{
-
-                    var data=await response.json();//This data will have the all the info about the weather from the particular city Banglore that we manually entered in the apiUrl link
-
-                    // Select the city and innerHTML will update the text written in this element
+                    var data=await response.json();
                     document.querySelector(".city").innerHTML=data.name;
-                    // Math.round to round off the temp and display only the integer
                     document.querySelector(".temp").innerHTML=Math.round(data.main.temp) + "°C";
                     document.querySelector(".humidity").innerHTML=data.main.humidity +"%";
                     document.querySelector(".wind").innerHTML=data.wind.speed + " km/h";
 
                     if(data.weather[0].main=="Clouds"){
-                        // It will update tge source file
                         weatherIcon.src="clouds.png";
                     }
+                        
                     else if(data.weather[0].main=="Clear"){
                         weatherIcon.src="clear.png";
                     }
+                        
                     else if(data.weather[0].main=="Rain"){
                         weatherIcon.src="rain.png";
                     }
+                        
                     else if(data.weather[0].main=="Drizzle"){
                         weatherIcon.src="drizzle.png";
-                    }else if(data.weather[0].main=="Mist"){
+                    }
+                        
+                    else if(data.weather[0].main=="Mist"){
                         weatherIcon.src="mist.png";
                     }
 
@@ -109,10 +98,7 @@
 
         searchBtn.addEventListener("click",()=>{
             checkWeather(searchBox.value);
-        })
-
-
-        
+        }) 
 
     </script>
 </body>

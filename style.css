@@ -1,4 +1,4 @@
-*{ /* These properties applicable at all HTML elements*/
+*{
     margin: 0;
     padding: 0;
     font-family: 'Poppins',sans-serif;
@@ -13,10 +13,10 @@ body{
     width: 90%;
     max-width: 470px;
     background: linear-gradient(135deg, #00feba, #5b548a);
-    color: #fff; /* text color inside the card */
-    margin: 100px auto 0;/* 100px margin from top and 0px from bottom and left and right are auto*/
-    border-radius: 20px;/* to make corners round */
-    padding: 40px 35px;/* space inside the card */
+    color: #fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
     text-align: center;
 }
 
@@ -25,10 +25,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* So input field and search button will be aligned horizontally side by side */
 }
 
-/* search mein jo input field hai */
 .search input{
     border: 0;
     outline: 0;
@@ -46,7 +44,7 @@ body{
     border: 0;
     outline: 0;
     background:#ebfffc;
-    border-radius: 50%;/* Means it is a circle */
+    border-radius: 50%;
     width: 60px;
     height: 60px;
     cursor: pointer;
@@ -73,10 +71,10 @@ body{
 }
 
 .details{
-    display: flex;/* As we have to create 2 columns */
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;/* 20px from left and right side */
+    padding: 0 20px;
     margin-top: 50px;
 }
 

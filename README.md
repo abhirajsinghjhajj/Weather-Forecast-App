@@ -46,5 +46,6 @@ weather-forecast-app/
 2. Open the folder and double-click index.html to run it in your browser.
    
 🗝️ You may need to replace the API key in the script with your own OpenWeatherMap API key:
+```
 const apiKey = "YOUR_API_KEY_HERE";
-
+```
